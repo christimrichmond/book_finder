@@ -7,14 +7,12 @@ end
 
 post '/book_choice' do
 	book_name = params[:book_name]
-	book_link = params[:book_link]
-    redirect '/result?book_name=' + book_name
+	redirect '/result?book_name=' + book_name
 end
 
 get '/result' do
 	book_name = params[:book_name]
-	book_link = params[:book_link]
-    erb :results, :locals => {:book_name => book_name, :book_link => book_link, :results => result}
+    erb :results, :locals => {:book_name => book_name}
 end
 
 
